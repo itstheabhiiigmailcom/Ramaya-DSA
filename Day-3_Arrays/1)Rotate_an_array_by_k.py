@@ -70,3 +70,26 @@ def rotateArr(self,A,D,N):
         
         #Finally, reversing the whole array.
         A[0:N]=reversed(A[0:N])
+
+
+
+
+
+class Solution:
+    def reverse(self, A, low, high):
+        while low <= high:
+            A[low], A[high] = A[high], A[low]  # Swap elements
+            low += 1
+            high -= 1
+
+    # Function to rotate an array by d elements in counter-clockwise direction.
+    def rotateArr(self, A, D, N):
+        if D > N:
+            D = D % N  # In case D is greater than the size of the array
+        
+        # Step 1: Reverse the first D elements
+        self.reverse(A, 0, D - 1)
+        # Step 2: Reverse the remaining N - D elements
+        self.reverse(A, D, N - 1)
+        # Step 3: Reverse the entire array
+        self.reverse(A, 0, N - 1)

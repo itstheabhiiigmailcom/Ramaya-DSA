@@ -78,7 +78,7 @@ class Solution:
         count = 0
         pre_sum = 0
         m = {}
-
+        
         for num in arr:
             pre_sum += num
 
