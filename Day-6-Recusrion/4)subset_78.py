@@ -18,7 +18,8 @@ void helper(vector<int>&nums,vector<int>v1,vector<vector<int>>&v,
        v1.push_back(nums[index]);
        helper(nums,v1,v,index+1,n);
     }
-    vector<vector<int>> subsets(vector<int>& nums) {
+    vector<vector<int>> subsets(vector<int>& nums) 
+    {
          vector<vector<int>>v;
          vector<int>v1;
          int n=nums.size();

@@ -32,3 +32,6 @@ void helper(stack<int>&s)
 void Reverse(stack<int> &St){
        helper(St);
 }
+
+
+Python -:
