@@ -45,3 +45,23 @@ class Solution(object):
         
         # Check if all counts are zero
         return all(c == 0 for c in count)
+# python solution 
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        map = {}
+        if len(s) != len(t):
+            return False
+        for i in range(len(s)):
+            if s[i] in map:
+                map[s[i]] += 1
+            else:
+                map[s[i]] = 1
+        for key, value in map.items():
+            if t.count(key) != value:
+                return False
+        return True
