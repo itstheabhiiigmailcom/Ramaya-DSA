@@ -16,7 +16,7 @@ int height(TreeNode* root)
 
         return max(left+right,max(diameterOfBinaryTree(root->left),
                                   diameterOfBinaryTree(root->right)));
-    }
+}
 
 
 
