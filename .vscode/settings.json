@@ -58,6 +58,11 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "vector": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "chrono": "cpp",
+    "random": "cpp",
+    "limits": "cpp",
+    "valarray": "cpp",
+    "functional": "cpp"
   }
 }
