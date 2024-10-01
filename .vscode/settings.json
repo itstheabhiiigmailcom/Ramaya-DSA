@@ -63,6 +63,8 @@
     "random": "cpp",
     "limits": "cpp",
     "valarray": "cpp",
-    "functional": "cpp"
+    "functional": "cpp",
+    "deque": "cpp",
+    "string": "cpp"
   }
 }

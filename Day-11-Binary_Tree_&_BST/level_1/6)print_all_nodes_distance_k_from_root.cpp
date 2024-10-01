@@ -24,3 +24,27 @@ vector<int> Kdistance(struct Node *root, int k)
     helper(root,k,v,dist);
     return v;
 }
+
+Python Code-:
+class Solution:
+    def KDistance(self, root, k):
+        # List to store the nodes at distance k
+        result = []
+        
+        # Helper function for traversal
+        def helper(node, dist):
+            if node is None:
+                return
+            
+            if dist == k:
+                result.append(node.data)
+                return
+            
+            # Recurse for left and right children
+            helper(node.left, dist + 1)
+            helper(node.right, dist + 1)
+        
+        # Start the helper function with initial distance 0
+        helper(root, 0)
+        
+        return result

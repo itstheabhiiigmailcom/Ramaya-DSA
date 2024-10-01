@@ -19,3 +19,24 @@ vector<int> inOrder(Node* root) {
       helper(root,v);
       return v;
 }
+
+
+Python Code-:
+class Solution:
+    def helper(self, root, v):
+        if root is None:
+            return
+        # Traverse left subtree
+        self.helper(root.left, v)
+        # Add root data to the list
+        v.append(root.data)  # Use 'data' instead of 'key'
+        # Traverse right subtree
+        self.helper(root.right, v)
+
+    def InOrder(self, root):
+        # List to store the result
+        v = []
+        # Call helper to fill the list with in-order traversal
+        self.helper(root, v)
+        # Return the result
+        return v

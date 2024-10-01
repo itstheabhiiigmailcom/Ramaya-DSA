@@ -20,3 +20,22 @@ vector<int> postorderTraversal(TreeNode* root)
 }
 
 
+
+Python Code-:
+def postOrder(root):
+    result = []
+    
+    def helper(node):
+        if node is None:
+            return
+        # Recursively visit the left subtree
+        helper(node.left)
+        # Recursively visit the right subtree
+        helper(node.right)
+        # Add root node data (visit the node after its children)
+        result.append(node.data)
+    
+    # Call the helper function to start post-order traversal
+    helper(root)
+    
+    return result

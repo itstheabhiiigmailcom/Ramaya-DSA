@@ -5,7 +5,7 @@
  3)find lcs.
 
 int helper(string s1,string s2)
-    {
+{
         int n=s1.length();
         int m=s2.length();
         
@@ -23,14 +23,15 @@ int helper(string s1,string s2)
            prev=curr;
        }
        return curr[m];
-    }
-    int longestPalinSubseq(string A) 
-    {
+}
+
+int longestPalinSubseq(string A) 
+{
         string s=A;
         reverse(A.begin(),A.end());
         
         return helper(s,A);
-    }
+}
 
 
 Python Code-:
