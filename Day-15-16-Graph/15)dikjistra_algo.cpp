@@ -34,3 +34,31 @@ vector <int> dijkstra(int V, vector<vector<int>> adj[], int S)
        return dist;
 }
 
+
+Python Code-:
+from typing import List
+import heapq
+
+class Solution:
+    # Function to find the shortest distance of all the vertices from the source vertex S.
+    def dijkstra(self, V: int, adj: List[List[int]], S: int) -> List[int]:
+        dist = [float('inf')] * V  # Initialize distances to infinity
+        dist[S] = 0  # Distance to the source vertex is 0
+        pq = []  # Priority queue (min-heap)
+        heapq.heappush(pq, (0, S))  # Push source vertex with distance 0
+
+        # Main loop of Dijkstra's algorithm
+        while pq:
+            dis, node = heapq.heappop(pq)  # Get node with smallest distance
+
+            # Traverse all adjacent nodes
+            for x in adj[node]:
+                adjNode = x[0]
+                wt = x[1]
+
+                # Relaxation step
+                if dist[adjNode] > dist[node] + wt:
+                    dist[adjNode] = dist[node] + wt
+                    heapq.heappush(pq, (dist[adjNode], adjNode))  # Push updated distance into priority queue
+
+        return dist

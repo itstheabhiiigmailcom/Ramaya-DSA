@@ -7,7 +7,7 @@ Steps-:
 
 Code-:
 void topo_sort(vector<vector<int>>& adj,int V,bool visited[],int s,stack<int>&st)
-	{
+{
 	    visited[s]=true;
 	    for(auto x:adj[s])
 	    {
@@ -15,7 +15,7 @@ void topo_sort(vector<vector<int>>& adj,int V,bool visited[],int s,stack<int>&st
 	        topo_sort(adj,V,visited,x,st);
 	    }
 	    st.push(s);
-	}
+}
 	
 	void topo(vector<vector<int>>& adj,int V,stack<int>&st)
 	{

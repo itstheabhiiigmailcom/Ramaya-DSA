@@ -73,3 +73,35 @@ int spanningTree(int V, vector<vector<int>> adj[])
       }
       return sum;
 }
+
+Python Code-:
+import heapq
+from typing import List
+
+class Solution:
+    # Function to find the sum of weights of the edges of the Minimum Spanning Tree.
+    def spanningTree(self, V: int, adj: List[List[List[int]]]) -> int:
+        visited = [False] * V  # To track visited nodes
+        dist = [float('inf')] * V  # Initialize distances to infinity
+        dist[0] = 0  # Start with vertex 0 (arbitrary choice)
+
+        # Priority queue (min-heap) to store (distance, vertex)
+        pq = []
+        heapq.heappush(pq, (0, 0))  # Push (distance, vertex) with starting vertex
+
+        while pq:
+            weight, u = heapq.heappop(pq)  # Pop the smallest distance vertex
+            if visited[u]:
+                continue  # Skip if the node is already visited
+
+            visited[u] = True  # Mark the node as visited
+
+            # Traverse all adjacent vertices of node u
+            for neighbor in adj[u]:
+                vertex, wt = neighbor[0], neighbor[1]
+                if not visited[vertex] and dist[vertex] > wt:
+                    dist[vertex] = wt  # Update the distance to the new smaller weight
+                    heapq.heappush(pq, (dist[vertex], vertex))  # Push the updated distance
+
+        # Calculate the sum of the minimum distances (MST weight)
+        return sum(dist)
